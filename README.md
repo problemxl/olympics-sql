@@ -22,7 +22,7 @@ from (select slug_game, country_name, count(medals.id) as total_medals
 group by slug_game;
 ```
 
-### ### List the total, average, median for each country
+### List the total, average, median for each country
 ```sql
 select country_name,  
 	count(total_medals) as total_medals,  
