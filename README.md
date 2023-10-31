@@ -43,7 +43,9 @@ from olympics.athletes
 	left join olympics.athlete_injuries ai on athletes.id = ai.athlete_id  
 	inner join olympics.injuries i on i.id = ai.injury_id;
 ```
-![[1__PSoNtTmWbmomychydTdsA.webp]]
+![LEFT_JOIN](https://github.com/problemxl/olympics-sql/assets/16285595/e7332253-75c9-4ca9-a17c-b706774f251d)
+
+
 ## Right Join
 ### List all Athletes and include one sponsor name that they may have had
 
@@ -53,6 +55,7 @@ from olympics.athletes
 	right join olympics.athlete_sponsors on athletes.id = athlete_sponsors.athlete_id  
 	inner join olympics.sponsors on sponsors.id = athlete_sponsors.sponsor_id;
 ```
+![RIGHT_JOIN](https://github.com/problemxl/olympics-sql/assets/16285595/0cfded47-3d16-4de1-9f0c-a731483f3b06)
 
 ## Left Outer Join
 ### List all athletes who never had an injury
@@ -62,7 +65,8 @@ select athlete_full_name
 from olympics.athletes  
 	left outer join olympics.athlete_injuries ai on athletes.id = ai.athlete_id;
 ```
-![[1__PSoNtTmWbmomychydTdsA.webp]]
+![LEFT_EXCLUDING_JOIN](https://github.com/problemxl/olympics-sql/assets/16285595/6b54fe56-2d21-42aa-aa12-3c9c52160554)
+
 ## Right Outer Join
 
 ### List all athletes that don’t have a sponsor
@@ -73,6 +77,9 @@ from olympics.athlete_sponsors
 	right outer join olympics.athletes on athletes.id = athlete_sponsors.athlete_id  
 where sponsor_id is null;
 ```
+
+![RIGHT_EXCLUDING_JOIN](https://github.com/problemxl/olympics-sql/assets/16285595/7525056e-7c14-472a-b62a-c77e13cc5372)
+
 ## Inner Join
 ### List all athletes who had a sponsor and an injury  
 ```sql
@@ -81,6 +88,8 @@ from olympics.athletes
 	inner join olympics.athlete_injuries ai on athletes.id = ai.athlete_id  
 	inner join olympics.athlete_sponsors asp on athletes.id = asp.athlete_id;
 ```
+![INNER_JOIN](https://github.com/problemxl/olympics-sql/assets/16285595/3f424ead-95cf-4df6-b37b-421e0d438de8)
+
 
 ## Self Join
 ### List all athletes and mentors by name
