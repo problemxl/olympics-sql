@@ -102,7 +102,7 @@ with sponsor_amounts as (select athlete_id, sum(amount) as total_amount
 					  from sponsor_amounts),  
 	 athletes_above_median as (select *  
 					from sponsor_amounts, median_amount  
-				   here sponsor_amounts.total_amount > median_amount.median_amount)  
+				   where sponsor_amounts.total_amount > median_amount.median_amount)  
 select *  
 from athletes_above_median  
 limit 100;
